@@ -1,24 +1,11 @@
-# README
+# Notifications in Real Time
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sistema de notificações de usuários em tempo real utilizando:
 
-Things you may want to cover:
+* Devise
+* Channel
 
-* Ruby version
+Outras bibliotecas:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Materialize
+* JQuery
