@@ -10,6 +10,5 @@ class NotificationRelayJob < ApplicationJob
       partial: 'notices/new_notification.html.erb',
       locals: {notification: notification}
     )
-    
   end
 end
