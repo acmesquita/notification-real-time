@@ -1,0 +1,38 @@
+<table>
+    <thead>
+      <tr>
+          <th>Email</th>
+          <th></th>
+      </tr>
+    </thead>
+  <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><!-- Modal Trigger -->
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick="modalRecipient(<%= user.id %>)" >Aviso</a>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Novo aviso</h4>
+      <%= form_with scope: Notice.new, url: create_notice_path, local: true do |f| %>
+        Mensagem: <%= f.text_field :body %>
+         <%= f.text_field :recipient_id, id:'recipient', hidden:true%>
+         <%= f.text_field :sender_id, hidden:true, value:current_user.id %>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+          <i class="material-icons right">send</i>
+        </button>
+      <% end %>
+    </div>
+  </div>
+  <script>
+    function modalRecipient(recipientId) {
+      $('#recipient').val(recipientId);
+    };
+  </script>
+  

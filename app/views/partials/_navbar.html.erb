@@ -1,0 +1,21 @@
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">Notificações</a></li>
+    <li class="divider"></li>
+    <div data-behavior="notices">
+    </div>
+  </ul>
+  <nav>
+    <div class="nav-wrapper">
+      <div class="container">
+        <a href="#" class="brand-logo">Notificações</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons">notifications</i></a></li>
+          <li>
+            <%= link_to('Sair', destroy_user_session_path, method: :delete) %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  

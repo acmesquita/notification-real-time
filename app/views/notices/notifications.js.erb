@@ -1,0 +1,9 @@
+var notification = '';
+<% if @notices.length < 1 %>
+  notification = '<li><a href="#">Nenhuma notificação.</a></li>';
+<% else %>
+  <% @notices.reverse_each do |notice| %>
+    notification += "<li><a href='#'><b><small><%= notice.sender.email %></small></b> <%= notice.body %></a></li>";
+  <% end %>
+<% end %>
+$('[data-behavior~=notices]').prepend(notification);
